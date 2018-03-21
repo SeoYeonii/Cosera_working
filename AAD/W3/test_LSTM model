@@ -1,0 +1,14 @@
+#i n this example, the LSTM() layer must specify the shape of the input.
+
+The input to every LSTM layer must be three-dimensional.
+
+The three dimensions of this input are:
+
+Samples. One sequence is one sample. A batch is comprised of one or more samples.
+Time Steps. One time step is one point of observation in the sample.
+Features. One feature is one observation at a time step.
+This means that the input layer expects a 3D array of data when fitting the model and when making predictions, even if specific dimensions of the array contain a single value, e.g. one sample or one feature.
+
+When defining the input layer of your LSTM network, the network assumes you have 1 or more samples and requires that you specify the number of time steps and the number of features. You can do this by specifying a tuple to the “input_shape” argument.
+
+For example, the model below defines an input layer that expects 1 or more samples, 50 time steps, and 2 features.
